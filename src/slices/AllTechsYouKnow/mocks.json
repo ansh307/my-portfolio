@@ -1,0 +1,22 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"techs_you_know",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "up",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

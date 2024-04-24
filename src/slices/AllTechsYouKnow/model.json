@@ -1,0 +1,26 @@
+{
+  "id": "all_techs_you_know",
+  "type": "SharedSlice",
+  "name": "AllTechsYouKnow",
+  "description": "AllTechsYouKnow",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "techs_you_know": {
+          "type": "Text",
+          "config": {
+            "label": "Techs you know",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

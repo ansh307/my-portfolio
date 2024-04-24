@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "card",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"tech_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "greatly",
+							"type": "Text"
+						}
+					],
+					[
+						"tech_color",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "#079aff",
+							"type": "Color"
+						}
+					]
+				]
+			}
+		]
+	}
+]
