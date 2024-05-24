@@ -16,6 +16,7 @@ type ContentListProps = {
   viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
 };
 
+
 export default function ContentList({
   items,
   contentType,
@@ -54,52 +55,13 @@ export default function ContentList({
               end: "bottom center",
               toggleActions: "play none none none",
             },
-          },
+          }
         );
       });
 
       return () => ctx.revert(); // cleanup!
     }, component);
   }, []);
-
-  // useEffect(() => {
-  //   // Mouse move event listener
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     const mousePos = { x: e.clientX, y: e.clientY + window.scrollY };
-  //     // Calculate speed and direction
-  //     const speed = Math.sqrt(Math.pow(mousePos.x - lastMousePos.current.x, 2));
-
-  //     let ctx = gsap.context(() => {
-  //       // Animate the image holder
-  //       if (currentItem !== null) {
-  //         const maxY = window.scrollY + window.innerHeight - 350;
-  //         const maxX = window.innerWidth - 250;
-
-  //         gsap.to(revealRef.current, {
-  //           x: gsap.utils.clamp(0, maxX, mousePos.x - 110),
-  //           y: gsap.utils.clamp(0, maxY, mousePos.y - 160),
-  //           rotation: speed * (mousePos.x > lastMousePos.current.x ? 1 : -1), // Apply rotation based on speed and direction
-  //           ease: "back.out(2)",
-  //           duration: 1.3,
-  //         });
-  //         gsap.to(revealRef.current, {
-  //           opacity: hovering ? 1 : 0,
-  //           visibility: "visible",
-  //           ease: "power3.out",
-  //           duration: 0.4,
-  //         });
-  //       }
-  //       lastMousePos.current = mousePos;
-  //       return () => ctx.revert(); // cleanup!
-  //     }, component);
-  //   };
-
-  //   window.addEventListener("mousemove", handleMouseMove);
-
-  //   return () => {
-  //     window.removeEventListener("mousemove", handleMouseMove);
-  //   };
-  // }, [hovering, currentItem]);
 
   const onMouseEnter = (index: number) => {
     setCurrentItem(index);
@@ -142,7 +104,9 @@ export default function ContentList({
         {items.map((post, index) => (
           <li
             key={index}
-            ref={(el) => (itemsRef.current[index] = el)}
+            ref={(el) => {
+              itemsRef.current[index] = el;
+            }}
             onMouseEnter={() => onMouseEnter(index)}
             className="list-item opacity-0"
           >
@@ -167,16 +131,6 @@ export default function ContentList({
             </a>
           </li>
         ))}
-
-        {/* Hover element */}
-        {/* <div
-          className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
-          style={{
-            backgroundImage:
-              currentItem !== null ? `url(${contentImages[currentItem]})` : "",
-          }}
-          ref={revealRef}
-        ></div> */}
       </ul>
     </>
   );
